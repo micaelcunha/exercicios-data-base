@@ -1,0 +1,27 @@
+CREATE TABLE cliente
+(ID int NOT NULL AUTO_INCREMENT, 
+CPF 		VARCHAR (11)  NOT NULL,
+NOME 		VARCHAR (100) NOT NULL,
+DATA_NASCIMENTO DATE 	  NOT NULL,
+ENDERECO 	VARCHAR (150) NOT NULL,
+CEP 		VARCHAR (8)   NOT NULL,
+BAIRRO 		VARCHAR (50)  NOT NULL,
+CIDADE 		VARCHAR (50)  NOT NULL,
+UF 			VARCHAR (2)   NOT NULL,
+PRIMARY KEY (ID));
+
+alter table cliente 
+add data_ultima_compra date null;
+
+insert into
+cliente 
+(cpf, nome, data_nascimento, endereco, cep, bairro, cidade, uf)
+values
+('04496332780', 'João da Silva', 		'1969-11-25', 'Rua Antônio Numes', 	'88045963', 'Palmeiras', 	'Londrina', 	  'PR'),
+('05485031490', 'Ana Regina Fagundes', 	'1986-09-21', 'Rua Palmeias Novas', '88078923', 'Leblon', 		'Rio de Janeiro', 'RJ'),
+('03350314905', 'Fernando Soares', 		'1990-03-05', 'Rua Palmeias Novas', '88048917', 'Copacabana', 	'Rio de Janeiro', 'RJ');
+
+delete from cliente
+where cidade = 'Londrina';
+
+select * from cliente;

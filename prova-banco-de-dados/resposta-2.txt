@@ -1,0 +1,18 @@
+select tabela_1.tb01_produtos_nome
+from tb01_produtos as tabela_1
+join tb03_itens_vendas as tabela_3 
+on tabela_1.tb01_produtos_codbarras = tabela_3.tb03_produtos_codbarras;
+
+select tabela_3.tb03_vendas_cod, tabela_1.tb01_produtos_nome
+from tb03_itens_vendas as tabela_3
+join tb01_produtos as tabela_1 
+on tabela_1.tb01_produtos_codbarras = tabela_3.tb03_produtos_codbarras
+where tabela_1.tb01_produtos_nome like = 'Toddy';
+
+select tabela_1.tb01_produtos_nome
+from tb01_produtos as tabela_1
+left join tb03_itens_vendas as tabela_3
+on tabela_1.tb01_produtos_codbarras = tabela_3.tb03_produtos_codbarras,
+left join  tb02_vendas as tabela_2
+on tabela_3.tb03_vendas_cod = tabela_2.tb02_vendas_cod,
+where month(tabela_2.tb02_vendas_date) = 5;
